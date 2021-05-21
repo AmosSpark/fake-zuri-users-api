@@ -8,8 +8,8 @@ const usersSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: [true, "Please provide your full name."],
-    minlength: [2, `Your name must be at least 2 characters long, got {VALUE}.`],
-    maxlength: [30, `Your name must not be 30 characters long, got {VALUE}.`],
+    minlength: [2, `Your name must be at least 2 characters long, got '{VALUE}'.`],
+    maxlength: [30, `Your name must not be 30 characters long, got '{VALUE}'.`],
   },
 
   email: {
@@ -20,11 +20,11 @@ const usersSchema = new mongoose.Schema({
         },
         "Please provide your email.",
     ],
-    unique: [true, "Your email must be unique,there's already a user with {VALLUE}"],
+    unique: [true, `Your email must be unique,there's already a user with '{VALLUE}'`],
     lowercase: true,
     validate: [
       Validator.isEmail,
-      "Please provide a valid email, got {VALUE}."
+      `Please provide a valid email, got '{VALUE}'.`
     ],
   },
 
@@ -37,11 +37,11 @@ const usersSchema = new mongoose.Schema({
           },
           "Please tell us where you're from."
       ],
-      minlength: [3, `Your country must be at least 3 characters long, got {VALUE}.`],
-      maxlength: [30, `Your country must not be 30 characters long, got {VALUE}.`],
+      minlength: [3, `Your country must be at least 3 characters long, got '{VALUE}'.`],
+      maxlength: [30, `Your country must not be 30 characters long, got '{VALUE}'.`],
       validate: [
         Validator.isAlpha,
-        "Your country should only be in letters, got {VALUE}."
+        `Your country should only be in letters, got '{VALUE}'.`
       ],
     },
 
