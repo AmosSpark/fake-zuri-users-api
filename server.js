@@ -10,6 +10,6 @@ const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
     console.log(
-      `> 😊 App now running\n> Server listening on PORT: ${port}... \n> Base URL: http://localhost:${port}/`
+      `> 😊 App now running\n> Server listening on PORT: ${port}... \n> Base URL: http://localhost:${port}/api/users`
     );
 });
